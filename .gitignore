@@ -1,0 +1,5 @@
+*.vcf.gz
+*.tbi
+*.log
+*.txt
+.snakemake

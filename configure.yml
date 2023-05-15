@@ -1,0 +1,15 @@
+input_vcf: 'data/1kg.cr1.100kb_bounds.37.vcf.gz'
+samples: 'data/acb.samples.txt' # should be <null> if sampling are not required
+chromosome: 1
+
+refs:
+  fasta: 'Homo_sapiens_assembly19.fasta'
+  gmap_dir: 'eagle_genetic_maps/'
+  manifest: 'manifest.mf'
+
+tools:
+  bcftools: 'bcftools'
+  tabix: 'tabix'
+  java: 'java'
+  eagle: 'eagle'
+  vcfaa: 'vcfancestralalleles.jar'
