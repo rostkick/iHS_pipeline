@@ -2,4 +2,7 @@
 *.tbi
 *.log
 *.txt
+*.yml
 .snakemake
+*.tsv
+configure.yml

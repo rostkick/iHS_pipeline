@@ -56,7 +56,7 @@ rule phasing:
 		"""
 
 rule paste_aa:
-	default_target: True
+	# default_target: True
 	input:
 		vcf=rules.phasing.output.vcf
 	output:
@@ -71,3 +71,13 @@ rule paste_aa:
 		{params.java} -jar {params.vcfaa} \
 		-m {params.mf} {input.vcf} > {output.vcf} 2>{log}
 		"""
+
+rule get_iHS_score:
+	default_target: True
+	input:
+		vcf=rules.paste_aa.output.vcf
+	output:
+		vcf='result/ihs.tsv'
+	params:
+		position=config['position']
+	script: "iHS.R"
